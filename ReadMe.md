@@ -6,17 +6,30 @@ Node.js + express のプロジェクト作成手順を記載するプロジェ�
     - [mintsu's blog - Linux(Ubuntu)にnodenvを導入する方法](https://blog.mintsu-dev.com/posts/2020-07-22-install-nodenv-linux/#nodenv-install)
     - [Qiita - @282Haniwa - nodenvの環境構築](https://qiita.com/282Haniwa/items/a764cf7ef03939e4cbb1)
 
-## 開発環境
-| 名前 | バージョン |
-|-|:-:|
-| VirtualBox | 6.1 |
-| ubuntu | 20.04.3 server |
-| Visual Studio Code | 1.61.0 |
-| nodenv | 1.4.0+3.631d0b6 |
-| Node.js | 17.0.1 |
-| express | 4.17.1 |
+## 実行手順
+本プロジェクトを実行する場合、[環境構築](#環境構築) を行った後に下記を実行してください
 
-## 環境構築
+### 構築/設定
+```sh
+# 1. ソース取得
+git clone https://github.com/k-shiroma/sample-express.git
+
+# 2. ライブラリ取得
+cd sample-express
+npm install
+```
+
+### 実行
+1. 起動
+    ```sh
+    node index.js
+    ```
+1. http://localhost:8080 をブラウザで開く
+
+## 開発手順
+本プロジェクトの作成手順です
+
+### 環境構築
 ```sh
 # 1. nodenv
 ## apt アップデート
@@ -70,11 +83,7 @@ node -v
 nodenv versions
 ```
 
-## 開発手順
-本プロジェクトの作成手順です。  
-本プロジェクトを動作させたい場合、下記 [実行手順](#実行手順) を行ってください
-
-### 環境構築
+### 設定
 ```sh
 # 3. プロジェクト設定
 ## プロジェクトルート作成
@@ -95,7 +104,7 @@ npm init -y
 npm install express
 ```
 
-### 開発
+### 実装
 1. index.js 作成
     ```js
     const express = require('express')
@@ -107,24 +116,10 @@ npm install express
 
     app.listen(8080, () => console.log('listening on http://localhost:8080'))
     ```
-1. 実行
-    1. 起動
-        ```sh
-        node index.js
-        ```
-    1. http://localhost:8080 をブラウザで開く
 
-## 実行手順
-本プロジェクトを実行する場合、[環境構築](#環境構築) を行った後に下記を実行してください
-
-```sh
-# 1. ソース取得
-git clone https://github.com/k-shiroma/sample-express.git
-
-# 2. ライブラリ取得
-cd sample-express
-npm install
-
-# 3. 実行
-node index.js
-```
+### 実行
+1. 起動
+    ```sh
+    node index.js
+    ```
+1. http://localhost:8080 をブラウザで開く
